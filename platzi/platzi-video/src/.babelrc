@@ -1,0 +1,6 @@
+{
+    "presets": [
+        "@babel/preset-env", // Para trabajar con ESCMASCRIPT 5 y 6
+        "@babel/preset-react" // Para trabajar con React (.jsx)
+    ]
+}
