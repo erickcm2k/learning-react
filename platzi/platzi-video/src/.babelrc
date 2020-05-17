@@ -4,3 +4,7 @@
         "@babel/preset-react" // Para trabajar con React (.jsx)
     ]
 }
+
+// Se agrega la compatibilidad con varios navegadores.
+
+// npm install @babel/core babel-loader @babel/preset-env @babel/preset-react --save-dev
