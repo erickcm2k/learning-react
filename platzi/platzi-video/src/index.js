@@ -1,8 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom' // Para 'empujar' el código al navegador
-import HelloWorld from './components/HelloWorld'
+import App from './Containers/App'
 
-
-
-ReactDOM.render(<HelloWorld/>, document.getElementById('app')) // Componente, ruta a 'empujar'
+ReactDOM.render(<App/>, document.getElementById('app')) // Componente, ruta a 'empujar'
 

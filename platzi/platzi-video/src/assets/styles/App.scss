@@ -1,7 +1,11 @@
 body {
     margin: 0;
-    background-color: red;
-    color: white;
-}
-
+    font-family: 'Muli', sans-serif;
+    background: #8f57fd;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+// Esto aplica a todos los componentes.
 // npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
