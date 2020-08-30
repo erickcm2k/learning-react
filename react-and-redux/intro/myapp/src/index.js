@@ -15,17 +15,14 @@ function formatAMPM() {
   return strTime;
 }
 
-function hour() {
-    return (new Date()).toLocaleTimeString();
-}
 
 const App = () => {
   return (
     <div>
       <div style={{ backgroundColor: "blue", color: "white" }}>
-        Hello there! It's {formatAMPM()}, {hour()}
+        Hello there! It's {formatAMPM()},
       </div>
-  <button>{buttonText}</button>
+      <button>{buttonText}</button>
     </div>
   );
 };
