@@ -3,7 +3,8 @@ import React from "react";
 class SearchBar extends React.Component {
   state = { searchTerm: "" };
 
-  // Using => functions eliminated the context of 'this'.
+  // Using => functions eliminates the context of 'this'.
+  // Prevents confusions with 'this' from the form
   onFormSubmit = (event) => {
     event.preventDefault();
     this.props.onSubmit(this.state.searchTerm);
@@ -21,9 +22,9 @@ class SearchBar extends React.Component {
             className="field"
             value={this.state.searchTerm}
             // Callback function, do not use parenthesis.
-            onChange={(event) =>
-              this.setState({ searchTerm: event.target.value })
-            }
+            onChange={(event) => {
+              this.setState({ searchTerm: event.target.value });
+            }}
           ></input>
         </form>
       </div>
