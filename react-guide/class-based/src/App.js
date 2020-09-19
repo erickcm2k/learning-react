@@ -5,32 +5,37 @@ import "./App.css";
 class App extends React.Component {
   state = {
     persons: [
-      { name: "Max", age: 28 },
-      { name: "Manu", age: 29 },
-      { name: "Stephanie", age: 26 },
-      { name: "Erick", age: 20 },
+      { id: "123", name: "Max", age: 28 },
+      { id: "124", name: "Manu", age: 29 },
+      { id: "125", name: "Stephanie", age: 26 },
+      { id: "126", name: "Erick", age: 20 },
     ],
     showPersons: true,
     otherState: "some other value",
   };
 
-  toggleName = () => {
-    this.setState({
-      persons: [
-        { name: "Maximilian", age: 28 },
-        { name: "Manu", age: 29 },
-        { name: "Stephy", age: 27 },
-      ],
-    });
+  nameChangerHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex((p) => p.id === id);
+    const person = {
+      ...this.state.persons[personIndex],
+    };
+    person.name = event.target.value;
+
+    // Updating the array with the new values.
+
+    const persons = [...this.state.persons];
+    persons[personIndex] = person;
+
+    this.setState({ persons: persons });
   };
 
-  nameChangedHandler = (event) => {
+  deletePersonHandler = (personIndex) => {
+    // const persons = this.state.persons;
+    const persons = [...this.state.persons];
+    persons.splice(personIndex, 1);
+    console.log(persons);
     this.setState({
-      persons: [
-        { name: "Maximilian", age: 28 },
-        { name: event.target.value, age: 29 },
-        { name: "Stephy", age: 27 },
-      ],
+      persons: persons,
     });
   };
 
@@ -53,8 +58,18 @@ class App extends React.Component {
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this.state.persons.map((person) => {
-            return <Person name={person.name} age={person.age}>Racing cars</Person>;
+          {this.state.persons.map((person, index) => {
+            return (
+              <Person
+                name={person.name}
+                age={person.age}
+                click={() => this.deletePersonHandler(index)}
+                key={person.id}
+                changed={(event) => this.nameChangerHandler(event, person.id)}
+              >
+                Racing cars
+              </Person>
+            );
           })}
         </div>
       );
