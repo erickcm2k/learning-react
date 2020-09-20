@@ -1,7 +1,6 @@
 import React from "react";
 import Person from "./Person/Person";
 import "./App.css";
-
 class App extends React.Component {
   state = {
     persons: [
@@ -51,6 +50,10 @@ class App extends React.Component {
       border: "1px solid blue",
       padding: "8px",
       cursor: "pointer",
+      ":hover": {
+        backgroundColor: "lightgreen",
+        color: "black ",
+      },
     };
 
     let persons = null;
@@ -75,15 +78,25 @@ class App extends React.Component {
       );
     }
 
+    let classes = [];
+    if (this.state.persons.length > 2) {
+      classes.push("red");
+    }
+
+    if (this.state.persons.length > 3) {
+      classes.push("bold");
+    }
+
     return (
-      <div className="App">
-        <h1>Hi, I'm a React App</h1>
-        <p>This is really working!</p>
-        <button style={buttonStyle} onClick={this.togglePersonsHandler}>
-          Switch Name
-        </button>
-        {persons}
-      </div>
+
+        <div className="App">
+          <h1>Hi, I'm a React App</h1>
+          <p className={classes.join(" ")}>This is really working!</p>
+          <button style={buttonStyle} onClick={this.togglePersonsHandler}>
+            Switch Name
+          </button>
+          {persons}
+        </div>
     );
   }
 }
