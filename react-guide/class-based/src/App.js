@@ -4,7 +4,7 @@ import "./App.css";
 class App extends React.Component {
   state = {
     persons: [
-      { id: "123", name: "Max", age: 28 },
+      { id: "123", name: "Max", age: 22 },
       { id: "124", name: "Manu", age: 29 },
       { id: "125", name: "Stephanie", age: 26 },
       { id: "126", name: "Erick", age: 20 },
@@ -20,7 +20,7 @@ class App extends React.Component {
     };
     person.name = event.target.value;
 
-    // Updating the array with the new values.
+    // Updating the array with the new values
 
     const persons = [...this.state.persons];
     persons[personIndex] = person;
