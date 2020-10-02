@@ -56,12 +56,14 @@ class App extends Component {
     }
 
     return (
-      <Cockpit
-        showPersons={this.state.showPersons}
-        persons={this.state.persons}
-      >
+      <div className={classes.App}>
+        <Cockpit
+          showPersons={this.state.showPersons}
+          persons={this.state.persons}
+          clicked={this.togglePersonsHandler}
+        ></Cockpit>
         {persons}
-      </Cockpit>
+      </div>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
