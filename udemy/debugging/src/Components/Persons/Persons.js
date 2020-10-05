@@ -3,10 +3,10 @@ import Person from "./Person/Person";
 
 // https://es.reactjs.org/docs/react-component.html#constructor
 class Persons extends React.Component {
-  static getDerivedStateFromProps(props, state) {
-    console.log("[Persons.js] getDerivedStateFromProps");
-    return state;
-  }
+  // static getDerivedStateFromProps(props, state) {
+  //   console.log("[Persons.js] getDerivedStateFromProps");
+  //   return state;
+  // }
 
   /*
    * If returns false, then
@@ -26,7 +26,7 @@ class Persons extends React.Component {
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log("[Persons.js] getSnapshotBeforeUpdate");
     // return { message: "Msg from getSnapshotBeforeUpdate" };
-    return true;
+    return { message: 'Snapshot!' };
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -39,6 +39,7 @@ class Persons extends React.Component {
   }
 
   render() {
+    console.log('[Persons.js] rendering...');
     return this.props.persons.map((person, index) => {
       return (
         <Person

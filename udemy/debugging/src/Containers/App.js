@@ -6,15 +6,18 @@ import Cockpit from "../Components/Cockpit/Cockpit";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      persons: [
-        { id: "asfa1", name: "Max", age: 28 },
-        { id: "vasdf1", name: "Manu", age: 29 },
-        { id: "asdf11", name: "Stephanie", age: 26 },
-      ],
-      showPersons: true,
-    };
+    console.log('[App.js] constructor');
+
   }
+
+  state = {
+    persons: [
+      { id: "asfa1", name: "Max", age: 28 },
+      { id: "vasdf1", name: "Manu", age: 29 },
+      { id: "asdf11", name: "Stephanie", age: 26 },
+    ],
+    showPersons: true,
+  };
 
   static getDerivedStateFromProps(props, state) {
     console.log("[App] getDerivedStateFromProps", props);
