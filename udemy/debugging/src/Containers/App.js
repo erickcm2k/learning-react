@@ -6,8 +6,7 @@ import Cockpit from "../Components/Cockpit/Cockpit";
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log('[App.js] constructor');
-
+    console.log("[App.js] constructor");
   }
 
   state = {
@@ -17,6 +16,7 @@ class App extends Component {
       { id: "asdf11", name: "Stephanie", age: 26 },
     ],
     showPersons: true,
+    showCockpit: true,
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -29,11 +29,11 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    console.log('[App] componentDidUpdate');
+    console.log("[App] componentDidUpdate");
   }
 
   shouldComponentUpdate() {
-    console.log('[App] shouldComponentUpdate');
+    console.log("[App] shouldComponentUpdate");
     return true;
   }
 
@@ -83,12 +83,21 @@ class App extends Component {
     console.log("[App.js] rendering");
     return (
       <div className={classes.App}>
-        <Cockpit
-          title={this.props.appTitle}
-          showPersons={this.state.showPersons}
-          persons={this.state.persons}
-          clicked={this.togglePersonsHandler}
-        ></Cockpit>
+        <button
+          onClick={() => {
+            this.setState({ showCockpit: false });
+          }}
+        >
+          Remove Cockpit
+        </button>
+        {this.state.showCockpit ? (
+          <Cockpit
+            title={this.props.appTitle}
+            showPersons={this.state.showPersons}
+            persons={this.state.persons}
+            clicked={this.togglePersonsHandler}
+          ></Cockpit>
+        ) : null}
         {persons}
       </div>
     );

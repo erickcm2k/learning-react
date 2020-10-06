@@ -2,9 +2,15 @@ import React, { useEffect } from "react";
 import classes from "./Cockpit.css";
 
 const Cockpit = (props) => {
-
   useEffect(() => {
-    console.log('[Cockpit.js] useEffect');
+    console.log("[Cockpit.js] useEffect");
+    // http requests
+    return () => console.log('[Cockpit.js] useEffect cleanup');
+  }, [props.persons]); 
+  
+  useEffect(() => {
+    console.log("[Cockpit.js] 2nd useEffect");
+    return () => console.log('[Cockpit.js] 2nd useEffect cleanup');
   })
 
   const assignedClasses = [];
