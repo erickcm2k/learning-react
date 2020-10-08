@@ -15,7 +15,11 @@ class Persons extends React.Component {
    */
   shouldComponentUpdate(nextProps, nextState) {
     console.log("[Persons.js] shouldComponentUpdate");
-    return true;
+    if (nextProps.persons !== this.props.persons) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   /**
@@ -26,7 +30,7 @@ class Persons extends React.Component {
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log("[Persons.js] getSnapshotBeforeUpdate");
     // return { message: "Msg from getSnapshotBeforeUpdate" };
-    return { message: 'Snapshot!' };
+    return { message: "Snapshot!" };
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -39,7 +43,7 @@ class Persons extends React.Component {
   }
 
   render() {
-    console.log('[Persons.js] rendering...');
+    console.log("[Persons.js] rendering...");
     return this.props.persons.map((person, index) => {
       return (
         <Person

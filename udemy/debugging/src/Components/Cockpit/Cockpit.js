@@ -6,22 +6,21 @@ const Cockpit = (props) => {
     console.log("[Cockpit.js] useEffect");
     // http requests
     return () => console.log('[Cockpit.js] useEffect cleanup');
-  }, [props.persons]); 
-  
+  }, [props.persons]);  
   useEffect(() => {
     console.log("[Cockpit.js] 2nd useEffect");
     return () => console.log('[Cockpit.js] 2nd useEffect cleanup');
-  })
+  })  
 
   const assignedClasses = [];
   let btnClass = "";
   if (props.showPersons) {
     btnClass = classes.Red;
   }
-  if (props.persons.length >= 2) {
+  if (props.personsLength >= 2) {
     assignedClasses.push(classes.red); // classes = ['red']
   }
-  if (props.persons.length >= 1) {
+  if (props.personsLength >= 1) {
     assignedClasses.push(classes.bold); // classes = ['red', 'bold']
   }
 
@@ -36,4 +35,8 @@ const Cockpit = (props) => {
   );
 };
 
-export default Cockpit;
+// export default Cockpit;
+export default React.memo(Cockpit);
+// React.memo is a good alternative
+// to shouldComponentUpdate for
+// function based components

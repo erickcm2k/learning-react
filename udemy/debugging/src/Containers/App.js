@@ -94,14 +94,14 @@ class App extends Component {
           <Cockpit
             title={this.props.appTitle}
             showPersons={this.state.showPersons}
-            persons={this.state.persons}
+            // persons={this.state.persons}   Added for performance reasons, avoids Cockpit to rerender if a field that is not persons.length gets modified
+            personsLength={this.state.persons.length}
             clicked={this.togglePersonsHandler}
           ></Cockpit>
         ) : null}
         {persons}
       </div>
     );
-    // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
