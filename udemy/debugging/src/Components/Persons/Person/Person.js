@@ -6,6 +6,7 @@ class Person extends React.Component {
   render() {
     console.log("[Person] rendering");
     return (
+      // <React.Fragment>
       <Auxiliary>
         <p key="k1" onClick={this.props.click}>
           I'm {this.props.name} and I am {this.props.age} years old!
@@ -18,6 +19,7 @@ class Person extends React.Component {
           value={this.props.name}
         />
       </Auxiliary>
+      {/* </React.Fragment> */}
     );
   }
 }
