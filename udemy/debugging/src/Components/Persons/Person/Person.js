@@ -19,7 +19,7 @@ class Person extends React.Component {
           value={this.props.name}
         />
       </Auxiliary>
-      {/* </React.Fragment> */}
+      /* </React.Fragment> */
     );
   }
 }
