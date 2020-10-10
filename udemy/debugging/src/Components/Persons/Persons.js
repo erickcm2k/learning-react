@@ -2,7 +2,7 @@ import React from "react";
 import Person from "./Person/Person";
 
 // https://es.reactjs.org/docs/react-component.html#constructor
-class Persons extends React.Component {
+class Persons extends React.PureComponent {
   // static getDerivedStateFromProps(props, state) {
   //   console.log("[Persons.js] getDerivedStateFromProps");
   //   return state;
@@ -13,14 +13,18 @@ class Persons extends React.Component {
    * componentWillUpdate(), render() and componentDidUpdate()
    * will not be invoked
    */
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log("[Persons.js] shouldComponentUpdate");
-    if (nextProps.persons !== this.props.persons) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+
+// Using pure components checks prop by prop is everything is the same
+// is incompatible with shouldComponentUpdate 
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log("[Persons.js] shouldComponentUpdate");
+  //   if (nextProps.persons !== this.props.persons) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
   /**
    *
