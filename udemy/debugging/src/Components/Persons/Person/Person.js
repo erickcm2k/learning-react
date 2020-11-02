@@ -2,9 +2,20 @@ import React from "react";
 import Auxiliary from "../../../HOC/Auxiliary";
 import withClass from "../../../HOC/withClass";
 import classes from "./Person.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 class Person extends React.Component {
+  constructor(props) {
+    super(props);
+    this.inputElementRef = React.createRef();
+  }
+
+  componentDidMount() {
+    // Works with old React
+    // this.inputElement.focus();
+    this.inputElementRef.current.focus();
+  }
+
   render() {
     console.log("[Person] rendering");
     return (
@@ -16,6 +27,11 @@ class Person extends React.Component {
         <p key="k2">{this.props.children}</p>
         <input
           key="k3"
+          // Works with old React.
+          // ref={(inputEl) => {
+          //   this.inputElement = inputEl;
+          // }}
+          ref={this.inputElementRef}
           type="text"
           onChange={this.props.changed}
           value={this.props.name}
@@ -30,7 +46,7 @@ Person.propTypes = {
   click: PropTypes.func,
   name: PropTypes.string,
   age: PropTypes.number,
-  changed: PropTypes.func
-}
+  changed: PropTypes.func,
+};
 
 export default withClass(Person, classes.Person);
