@@ -4,6 +4,7 @@ import Persons from "../Components/Persons/Persons";
 import Cockpit from "../Components/Cockpit/Cockpit";
 import withClass from "../HOC/withClass";
 import Auxiliary from "../HOC/Auxiliary";
+import AuthContext from "../Context/auth-context";
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends Component {
     showPersons: true,
     showCockpit: true,
     changeCounter: 0,
+    authenticated: false,
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -74,6 +76,10 @@ class App extends Component {
     this.setState({ showPersons: !doesShow });
   };
 
+  loginHandler = () => {
+    this.setState({ authenticated: true });
+  };
+
   render() {
     console.log("App JS is rendering.");
     let persons = null;
@@ -84,6 +90,7 @@ class App extends Component {
           persons={this.state.persons}
           clicked={this.deletePersonHandler}
           changed={this.nameChangedHandler}
+          isAuthenticated={this.state.authenticated}
         ></Persons>
       );
     }
@@ -98,16 +105,23 @@ class App extends Component {
         >
           Remove Cockpit
         </button>
-        {this.state.showCockpit ? (
-          <Cockpit
-            title={this.props.appTitle}
-            showPersons={this.state.showPersons}
-            // persons={this.state.persons}   Added for performance reasons, avoids Cockpit to rerender if a field that is not persons.length gets modified
-            personsLength={this.state.persons.length}
-            clicked={this.togglePersonsHandler}
-          ></Cockpit>
-        ) : null}
-        {persons}
+        <AuthContext.Provider
+          value={{
+            authenticated: this.state.authenticated,
+            login: this.loginHandler,
+          }}
+        >
+          {this.state.showCockpit ? (
+            <Cockpit
+              title={this.props.appTitle}
+              showPersons={this.state.showPersons}
+              // persons={this.state.persons}   Added for performance reasons, avoids Cockpit to rerender if a field that is not persons.length gets modified
+              personsLength={this.state.persons.length}
+              clicked={this.togglePersonsHandler}
+            ></Cockpit>
+          ) : null}
+          {persons}
+        </AuthContext.Provider>
       </Auxiliary>
     );
   }
