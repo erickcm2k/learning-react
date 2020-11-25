@@ -1,0 +1,87 @@
+body {
+    font-family: sans-serif;
+    background-color: #fff3e2;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero h1 {
+    color: #f8f1f1;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .hero h4 {
+    color: #f8f1f1;
+    font-size: 1.2rem;
+  }
+
+
+  main {
+    background-color: #16697a;
+    padding: 2rem;
+    border-radius: 0.1rem;
+    font-size: 1.4rem;
+  }
+
+  form {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .todos {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .todo {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #db6400;
+    color: white;
+    width: 70%;
+    max-width: 800px;
+    padding: 0.5em;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .add {
+    background-color: #ffa62b;
+    color: #f8f1f1;
+    border-radius: 1rem;
+    border: 0;
+    padding: 0.4rem 1rem;
+    font-size: 1.3rem;
+  }
+
+  .input {
+    font-size: 1.2rem;
+    max-width: 60%;
+    margin-bottom: 1rem;
+  }
+
+  .submit-todo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  input[type="checkbox"] {
+    transform: scale(1.5);
+  }
