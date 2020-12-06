@@ -1,10 +1,10 @@
 # reactJS
 Learning React!
 
-**Web Development Club**
+- **Web Development Club**
 
-React lectures by (https://www.facebook.com/DWESCOM)[Web Development Club] at my school; ESCOM IPN. Imparted by (https://github.com/SoyOscarRH)[ÓscarRH]
+  React lectures by (https://www.facebook.com/DWESCOM)[Web Development Club] at my school; ESCOM IPN. Imparted by (https://github.com/SoyOscarRH)[ÓscarRH]
 
-**Academind**
+- **Academind**
 
-Files from ReactJS Course by Maximilian Schwarzmüller
+  Files from ReactJS Course by Maximilian Schwarzmüller
