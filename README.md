@@ -3,7 +3,7 @@ Learning React!
 
 - **Web Development Club**
 
-  React lectures by (https://www.facebook.com/DWESCOM)[Web Development Club] at my school; ESCOM IPN. Imparted by (https://github.com/SoyOscarRH)[ÓscarRH]
+  React lectures by [Web Development Club](https://www.facebook.com/DWESCOM) at my school; ESCOM IPN. Imparted by [ÓscarRH](https://github.com/SoyOscarRH)
 
 - **Academind**
 
