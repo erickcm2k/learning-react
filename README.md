@@ -1,6 +1,6 @@
 # reactJS
 
-  Files from courses I have taken.
+  Repository with files from React courses I have taken.
 
 - **Web Development Club**
 
@@ -14,9 +14,10 @@
   
   Folder that I use to practice with new React features learned.
   
-  
+  ```
     Some projects I've build using this knowledge
     
     - [CoronAImage](https://github.com/erickcm2k/coronaimage)
     
     - [My personal website](https://github.com/erickcm2k/newProjectPortfolio/tree/master/portfolio)
+```
