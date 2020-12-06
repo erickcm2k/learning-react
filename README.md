@@ -1,5 +1,6 @@
 # reactJS
-Learning React!
+
+  Files from courses I have taken.
 
 - **Web Development Club**
 
@@ -7,4 +8,15 @@ Learning React!
 
 - **Academind**
 
-  Files from ReactJS Course by Maximilian Schwarzmüller
+  Files from "React - The Complete Guide (incl Hooks, React Router, Redux)" Course by Maximilian Schwarzmüller
+
+- **Playgrounds**
+  
+  Folder that I use to practice with new React features learned.
+  
+  
+    Some projects I've build using this knowledge
+    
+    -[https://github.com/erickcm2k/coronaimage](CoronAImage)
+    
+    -[https://github.com/erickcm2k/newProjectPortfolio/tree/master/portfolio](My personal website)
