@@ -17,6 +17,6 @@
   
     Some projects I've build using this knowledge
     
-    -[https://github.com/erickcm2k/coronaimage](CoronAImage)
+    - [CoronAImage](https://github.com/erickcm2k/coronaimage)
     
-    -[https://github.com/erickcm2k/newProjectPortfolio/tree/master/portfolio](My personal website)
+    - [My personal website](https://github.com/erickcm2k/newProjectPortfolio/tree/master/portfolio)
