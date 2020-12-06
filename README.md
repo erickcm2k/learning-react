@@ -14,10 +14,10 @@
   
   Folder that I use to practice with new React features learned.
   
-  ```
+  
     Some projects I've build using this knowledge
     
-    - [CoronAImage](https://github.com/erickcm2k/coronaimage)
+    * [CoronAImage](https://github.com/erickcm2k/coronaimage)
     
-    - [My personal website](https://github.com/erickcm2k/newProjectPortfolio/tree/master/portfolio)
-```
+    * [My personal website](https://github.com/erickcm2k/newProjectPortfolio/tree/master/portfolio)
+
