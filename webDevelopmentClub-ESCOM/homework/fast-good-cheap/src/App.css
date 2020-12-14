@@ -1,0 +1,27 @@
+html {
+  background-color: rgb(36, 33, 33);
+}
+
+h1 {
+  color: #ffffff;
+}
+
+button {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  color: black;
+  padding: 2rem;
+  border-radius: 1rem;
+  letter-spacing: 0.1rem;
+  border: 0;
+  outline: 0;
+}
+
+.button-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
