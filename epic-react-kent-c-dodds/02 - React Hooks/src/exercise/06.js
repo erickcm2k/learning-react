@@ -18,17 +18,29 @@ function PokemonInfo({pokemonName}) {
   // 🐨 use React.useEffect where the callback should be called whenever the
   // pokemon name changes.
   const [pokemon, setPokemon] = React.useState(null)
-
+  const [error, setError] = React.useState(null)
   React.useEffect(() => {
     if (!pokemonName) {
       return
     } else {
       setPokemon(null)
-      fetchPokemon(pokemonName).then(pokemonData => {
-        setPokemon(pokemonData)
-      })
+      setError(null)
+      fetchPokemon(pokemonName).then(
+        pokemon => setPokemon(pokemon),
+        error => setError(error),
+      )
     }
   }, [pokemonName])
+
+  if (error) {
+    return (
+      <div role="alert">
+        There was an error {''}
+        <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
+      </div>
+    )
+  }
+
   // 💰 DON'T FORGET THE DEPENDENCIES ARRAY!
   // 💰 if the pokemonName is falsy (an empty string) then don't bother making the request (exit early).
   // 🐨 before calling `fetchPokemon`, clear the current pokemon state by setting it to null
@@ -40,7 +52,7 @@ function PokemonInfo({pokemonName}) {
   //   1. no pokemonName: 'Submit a pokemon'
   //   2. pokemonName but no pokemon: <PokemonInfoFallback name={pokemonName} />
   //   3. pokemon: <PokemonDataView pokemon={pokemon} />
-  if (!pokemonName) {
+  else if (!pokemonName) {
     return 'Submit a pokemon'
   } else if (!pokemon) {
     return <PokemonInfoFallback name={pokemonName} />
