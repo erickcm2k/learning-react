@@ -14,7 +14,7 @@ import {
 function pokemonInfoReducer(state, action) {
   switch (action.type) {
     case 'pending': {
-      // 🐨 replace "pokemon" with "data"
+      // 🐨 replace "pokemon" with "data
       return {status: 'pending', pokemon: null, error: null}
     }
     case 'resolved': {
