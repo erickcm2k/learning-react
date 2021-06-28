@@ -1,6 +1,6 @@
-# reactJS
-
-  Repository with files from React courses I have taken.
+  # Learning React
+  
+  Repository with files from React courses I've taken.
 
 - **[Epic React](https://epicreact.dev/)**
   
@@ -12,7 +12,7 @@
   
 
   
-    Some projects I've made using this knowledge
+   ## Some projects I've made using this knowledge
     
     * [CoronAImage](https://github.com/erickcm2k/coronaimage)
 
