@@ -10,14 +10,14 @@
 
   Files from "React - The Complete Guide (incl Hooks, React Router, Redux)" Course by Maximilian Schwarzmüller
 
-- **Playgrounds**
+- **[Epic React](https://epicreact.dev/)**
   
-  Folder that I use to practice with new React features learned.
+  Course files 
   
+
   
     Some projects I've build using this knowledge
     
     * [CoronAImage](https://github.com/erickcm2k/coronaimage)
     
     * [My personal website](https://github.com/erickcm2k/newProjectPortfolio/tree/master/portfolio)
-
