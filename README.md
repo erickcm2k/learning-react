@@ -2,22 +2,22 @@
 
   Repository with files from React courses I have taken.
 
-- **Web Development Club**
-
-  React lectures by [Web Development Club](https://www.facebook.com/DWESCOM) at my school; ESCOM IPN. Imparted by [ÓscarRH](https://github.com/SoyOscarRH)
-
-- **Academind**
-
-  Files from "React - The Complete Guide (incl Hooks, React Router, Redux)" Course by Maximilian Schwarzmüller
-
 - **[Epic React](https://epicreact.dev/)**
   
-  Course files 
+  Course files from this course by Kent C. Dodds.
+
+- **[Web Development Club](https://www.facebook.com/DWESCOM)**
+
+  Course given at my school, ESCOM IPN. By [ÓscarRH](https://github.com/SoyOscarRH).
   
 
   
-    Some projects I've build using this knowledge
+    Some projects I've made using this knowledge
     
     * [CoronAImage](https://github.com/erickcm2k/coronaimage)
+
+    * [Longest Common Subsequence](https://longest-common-subsequence.netlify.app/)
     
     * [My personal website](https://github.com/erickcm2k/newProjectPortfolio/tree/master/portfolio)
+
+
