@@ -22,6 +22,9 @@ class Switch extends React.Component {
       onClick,
       ...props
     } = this.props
+
+    console.log(this.props);
+
     const btnClassName = [
       className,
       'toggle-btn',
