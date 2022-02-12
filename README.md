@@ -10,7 +10,9 @@
 
   Course given at my school, ESCOM IPN. By [ÓscarRH](https://github.com/SoyOscarRH).
   
+- **[React Testing with Jest and Enzyme](https://www.udemy.com/course/react-testing-with-jest-and-enzyme/)**
 
+  Udemy course by Bonnie Schulkin
   
    ## Some projects I've made using this knowledge
     
