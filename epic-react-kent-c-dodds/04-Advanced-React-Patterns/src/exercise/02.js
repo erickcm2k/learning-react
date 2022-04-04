@@ -20,7 +20,9 @@ function Toggle({children}) {
 // 🐨 Flesh out each of these components
 
 // Accepts `on` and `children` props and returns `children` if `on` is true
-const ToggleOn = ({on, children}) => (on ? children : null)
+const ToggleOn = ({on, children}) => {
+  return on ? children : null
+}
 
 // Accepts `on` and `children` props and returns `children` if `on` is false
 const ToggleOff = ({on, children}) => (!on ? children : null)
@@ -38,7 +40,7 @@ function App() {
       <Toggle>
         <ToggleOn>The button is on</ToggleOn>
         <ToggleOff>The button is off</ToggleOff>
-
+        <span>Hello world</span>
         <ToggleButton />
       </Toggle>
     </div>
