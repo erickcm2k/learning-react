@@ -5,9 +5,10 @@ import UserefTest from "./Components/Useref-test/UserefTest";
 import UseReduce from "./Components/UseReduce/UseReduce";
 import UpdateFromChild from "./Components/UpdateFromChild/UpdateFromChild";
 import React from "react";
+import CounterEffect from "./Components/CounterEffect/CounterEffect";
 
 function App() {
-  return <UpdateFromChild />;
+  return <CounterEffect></CounterEffect>;
 }
 
 export default App;

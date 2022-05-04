@@ -15,7 +15,7 @@ const UserefTest = () => {
   useEffect(() => {
     // This way useRef prevents the component to rerender with each update
     renderCount.current = renderCount.current + 1;
-  });
+  }, [name]);
 
   const focus = () => {
     console.log(inputRef);
