@@ -44,6 +44,30 @@ const getTodo = async (req, res) => {
   }
 };
 
+const toggleTodoCompletion = async (req, res) => {
+  const { id, flag } = req.body;
+  try {
+    const sql = "UPDATE TODO SET completed = ? WHERE id = ?";
+    const values = [flag, id];
+    const resp = await pool.query(sql, values);
+
+    if (!resp.affectedRows) {
+      throw new Error("Error al cambiar el valor de completado del todo.");
+    }
+
+    res.status(200).send({
+      data: { id, newStatus: flag },
+      resp: "Valor de completado de todo cambiado correctamente.",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      data: null,
+      resp: "Error al cambiar el valor de completado del todo.",
+    });
+  }
+};
+
 const getTodos = async (req, res) => {
   try {
     const sql = `SELECT * FROM todo`;
@@ -78,4 +102,5 @@ module.exports = {
   getTodo,
   getTodos,
   deleteTodo,
+  toggleTodoCompletion,
 };
