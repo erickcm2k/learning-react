@@ -1,36 +1,104 @@
-import React, { useState } from "react";
-import { Typography } from "@mui/material";
+import React, { useState, useRef, useEffect } from "react";
+import { Input, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Checkbox from "@mui/material/Checkbox";
-import { Dialog } from "@mui/material";
+import { Dialog, FormControl, FormLabel } from "@mui/material";
 
 import axios from "axios";
 
-interface TodoProps {
+import { TodoProps } from "./TodoProps";
+import TodosContainer from "./TodosContainer";
+
+interface TodoProps2 {
   id: string;
   title: string;
   content: string;
   dueDate: string;
   completed: number;
   getTodos: Function;
+  todos: TodoProps[];
+  setTodos: Function;
 }
 
-const Todo = (props: TodoProps) => {
-  const [open, setOpen] = React.useState(false);
+const Todo = (props: TodoProps2) => {
+  const initialState = { ...props };
+  const [form, setForm] = useState(initialState);
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
+  const prevProps = useRef<TodoProps2>();
+  useEffect(() => {
+    prevProps.current = form;
+  }, [form]);
+
+  const onBlur = async () => {
+    await axios.put("http://localhost:3001/update", {
+      id: form.id,
+      title: form.title,
+      content: form.content,
+      dueDate: form.dueDate,
+      completed: form.completed,
+    });
+    updateTodos();
+  };
+
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = async () => setOpen(false);
 
   const newChecked = Boolean(props.completed);
 
+  const updateTodos = () => {
+    props.todos.forEach((todo, index, todosArray) => {
+      if (todo.id === props.id) {
+        const newTodos = [...todosArray];
+        const { title, content, dueDate, completed } = form;
+
+        const todo = {
+          ...props,
+          title,
+          content,
+          dueDate,
+          completed,
+        };
+        newTodos[index] = todo;
+        props.setTodos(newTodos);
+      }
+    });
+  };
+
+  const updateCompleted = () => {
+    props.todos.forEach((todo, index, todosArray) => {
+      if (todo.id === props.id) {
+        const newTodos = [...todosArray];
+        const { title, content, dueDate, completed } = form;
+
+        const todo = {
+          ...props,
+          title,
+          content,
+          dueDate,
+          completed: props.completed === 0 ? 1 : 0,
+        };
+        newTodos[index] = todo;
+        props.setTodos(newTodos);
+      }
+    });
+  };
+
   const toggleCompletion = async () => {
-    const resp = await axios.put("http://localhost:3001/setcompleted", {
+    await axios.put("http://localhost:3001/setcompleted", {
       id: props.id,
       flag: props.completed === 0 ? 1 : 0,
     });
-    console.log(resp);
-    props.getTodos();
+    updateCompleted();
   };
-  
 
   return (
     <Box
@@ -43,20 +111,26 @@ const Todo = (props: TodoProps) => {
     >
       <Dialog open={open} onClose={handleClose}>
         <Box sx={{ padding: "0.8rem" }}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            {props.title}
-          </Typography>
-          <hr></hr>
-          <Typography
-            id="modal-modal-content"
-
-            sx={{ mt: 2 }}
-          >
-            {props.content}
-          </Typography>
+          <FormControl>
+            <Input
+              type="text"
+              name="title"
+              value={form.title}
+              onChange={onChange}
+              onBlur={onBlur}
+            ></Input>
+            <Input
+              type="text"
+              name="content"
+              value={form.content}
+              onChange={onChange}
+              onBlur={onBlur}
+            ></Input>
+          </FormControl>
         </Box>
       </Dialog>
       <Typography onClick={handleOpen}>{props.title}</Typography>
+      <Typography onClick={handleOpen}>{props.content}</Typography>
 
       <Checkbox checked={newChecked} onChange={toggleCompletion} />
     </Box>

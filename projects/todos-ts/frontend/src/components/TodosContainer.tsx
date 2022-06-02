@@ -2,13 +2,7 @@ import React, { useEffect, useState } from "react";
 import Todo from "./Todo";
 import axios from "axios";
 
-interface TodoProps {
-  id: string;
-  title: string;
-  content: string;
-  dueDate: string;
-  completed: number;
-}
+import { TodoProps } from "./TodoProps";
 
 const TodosContainer = () => {
   const [todos, setTodos] = useState<TodoProps[]>([]);
@@ -31,7 +25,7 @@ const TodosContainer = () => {
       ) : (
         <>
           {todos.map((todo) => (
-            <Todo key={todo.id} {...todo} getTodos={getTodos} />
+            <Todo key={todo.id} {...todo} getTodos={getTodos} todos={todos} setTodos={setTodos}/>
           ))}
         </>
       )}
